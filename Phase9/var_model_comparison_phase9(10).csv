@@ -1,0 +1,5 @@
+Exceptions,Exception_Ratio,Avg_VaR ($),VaR_Volatility ($),Worst_Daily_Loss ($),Avg_Expected_Shortfall ($),Kupiec_POF_PValue,Christoffersen_IND_PValue,Conditional_Coverage_PValue,Basel_Zone,Model,Rank
+3,0.13%,8066.48,4992.4,27094.59,10199.04,0.0,0.9289,0.0,Green,GJR-GARCH-Scaled Historical VaR,1
+6,0.27%,8289.32,5278.26,27094.59,10357.28,0.0,0.0099,0.0,Green,"GARCH(1,1)-Scaled Historical VaR",2
+47,2.08%,8258.99,3672.03,27094.59,10495.88,0.0,0.0027,0.0,Yellow,Historical Simulation VaR,3
+36,1.59%,9055.73,6370.57,27094.59,11155.63,0.0092,0.1325,0.0109,Green,EWMA-Scaled Historical VaR,4

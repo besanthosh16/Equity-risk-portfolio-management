@@ -1,0 +1,11 @@
+Rank,Scenario,Type,Stressed_Portfolio_Loss ($),Stressed_VaR_99 ($),Stressed_ES_99 ($),Worst_Case_Loss ($)
+1,Equity Market Down 20%,Hypothetical,143899.27,167050.05,179031.27,244942.11
+2,COVID Crash (2020),Historical,235345.86,93281.4,101042.84,235345.86
+3,Volatility Doubles,Hypothetical,202085.68,46301.56,70263.98,202085.68
+4,Equity Market Down 10%,Hypothetical,71949.64,95100.42,107081.63,172992.48
+5,Correlation Spikes to 1.0,Hypothetical,151564.26,34726.17,52697.99,151564.26
+6,Equity Market Down 5%,Hypothetical,35974.82,59125.6,71106.81,137017.66
+7,Sector-Specific Shock (-15%),Hypothetical,21584.89,44735.67,56716.88,122627.73
+8,Inflation Shock (2022),Historical,112058.71,23888.18,27478.13,112058.71
+9,Tech Selloff Scenario,Historical,27889.86,15982.37,19548.82,27889.86
+10,Banking Stress (2023),Historical,0.0,15021.78,15459.26,15459.26

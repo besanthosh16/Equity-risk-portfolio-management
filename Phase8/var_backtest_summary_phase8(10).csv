@@ -1,0 +1,5 @@
+Model,N_Days,Exceptions,Expected_Exceptions,Exception_Ratio,Kupiec_POF_Stat,Kupiec_POF_PValue,POF_Conclusion,Christoffersen_IND_Stat,Christoffersen_IND_PValue,IND_Conclusion,Conditional_Coverage_PValue,CC_Conclusion,Basel_Zone,Basel_Status
+Historical VaR (750d),1762,33,17.6,1.87%,10.7892,0.001,FAIL,5.0748,0.0243,FAIL,0.0004,FAIL,Green,PASS (Model Valid)
+EWMA Volatility-Scaled VaR,2262,36,22.6,1.59%,6.7774,0.0092,FAIL,2.2625,0.1325,PASS,0.0109,FAIL,Green,PASS (Model Valid)
+"GARCH(1,1)-Scaled VaR",2262,6,22.6,0.27%,17.4381,0.0,FAIL,6.6554,0.0099,FAIL,0.0,FAIL,Green,PASS (Model Valid)
+GJR-GARCH-Scaled VaR,2262,3,22.6,0.13%,27.2901,0.0,FAIL,0.008,0.9289,PASS,0.0,FAIL,Green,PASS (Model Valid)
