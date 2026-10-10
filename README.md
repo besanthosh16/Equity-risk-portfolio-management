@@ -39,19 +39,19 @@ Project Structure
   equity-risk-portfolio-management/
       data/                      # Cached raw & processed price data
       src/
-        data_pipeline.py       # Data fetching, date alignment & return math
-        portfolio.py           # Portfolio construction & aggregate P&L
-        var_historical.py      # Historical Simulation VaR & Expected Shortfall[cite: 1]
-        volatility.py          # EWMA, GARCH(1,1), GJR-GARCH implementations[cite: 1]
-        backtesting.py         # Kupiec, Christoffersen, & Basel tests[cite: 1]
-        stress_testing.py      # Historical & hypothetical stress scenarios[cite: 1]
-        charts.py              # Visualizations & distribution plots[cite: 1]
+        data_pipeline.py         # Data fetching, date alignment & return math
+        portfolio.py             # Portfolio construction & aggregate P&L
+        var_historical.py        # Historical Simulation VaR & Expected Shortfall[cite: 1]
+        volatility.py            # EWMA, GARCH(1,1), GJR-GARCH implementations[cite: 1]
+        backtesting.py           # Kupiec, Christoffersen, & Basel tests[cite: 1]
+        stress_testing.py        # Historical & hypothetical stress scenarios[cite: 1]
+        charts.py                # Visualizations & distribution plots[cite: 1]
      dashboard/
-        app.py                 # Multi-page Streamlit application[cite: 1, 11]
+        app.py                   # Multi-page Streamlit application[cite: 1, 11]
      tests/
-        test_*.py              # Unit tests for risk metrics & validation assertions[cite: 1]
-     notebooks/                 # Exploratory data analysis & prototyping[cite: 1]
-     requirements.txt           # Project dependencies
+        test_*.py                # Unit tests for risk metrics & validation assertions[cite: 1]
+     notebooks/                  # Exploratory data analysis & prototyping[cite: 1]
+     requirements.txt            # Project dependencies
      README.md
 
 Setup
