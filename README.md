@@ -1,9 +1,11 @@
 Equity risk portfolio management
 
 Overview
+
 A Python-based quantitative risk platform designed to model, scale, backtest, and stress-test market risk metrics for equity portfolios. The platform calculates Value at Risk (VaR) and Expected Shortfall (ES) across multiple volatility-adjustment frameworks, evaluates regulatory compliance via statistical backtesting, and presents analytics through an interactive dashboard.
 
 Project Objective
+
 1. Compute 1-day and 10-day Value at Risk (VaR) alongside Expected Shortfall (ES / CVaR).
 2. Implement and compare volatility-scaling techniques to dynamically adjust historical returns to prevailing market volatility.
 3. Formally back-test VaR models against regulatory statistical frameworks (Kupiec, Christoffersen, and Basel Traffic Light).
@@ -11,6 +13,7 @@ Project Objective
 5. Provide an interactive UI for risk visualization, diagnostic monitoring, and reporting.
 
 Project Phases
+
 Phase 1: Data Collection — Ingestion of multi-asset historical adjusted prices via financial APIs (yfinance).
 Phase 2: Data Cleaning — Date alignment, handling splits/dividends, missing values, and generating stationary log-return matrices.
 Phase 3: Portfolio Construction — Weight allocation (equal-weighted, market-cap, custom), daily portfolio returns, and tracking daily P&L.
@@ -23,6 +26,7 @@ Phase 9: Model Comparison — Side-by-side metric benchmarking across average Va
 Phase 10: Stress Testing — Historical scenario playback (e.g., 2008 GFC, COVID-19 crash) and parametric factor shocks.
 
 Technologies Used
+
 Language: Python 3.10
 Data & Numerical Computing: pandas, numpy, scipy
 Time Series & Econometrics: arch (GARCH / GJR-GARCH), statsmodels
@@ -31,6 +35,7 @@ Visualization & UI: plotly, matplotlib, streamlit
 Testing: pytest
 
 Project Structure
+ 
   equity-risk-portfolio-management/
 ├── data/                      # Cached raw & processed price data
 ├── src/
@@ -50,6 +55,7 @@ Project Structure
 └── README.md
 
 Setup
+
 Prerequisites: Python 3.10 or higher & Git
 Step-by-Step Installation
 1. Create and activate a virtual environment
@@ -63,12 +69,14 @@ Step-by-Step Installation
    streamlit run dashboard/app.py
 
 Outputs
+
 1. Interactive Dashboard: Dynamic selectors for tickers, lookback windows (250/500/750d), confidence intervals (95%, 99%, 99.5%), and volatility models.
 2. Statistical Visualizations: Rolling VaR vs. realized P&L overlays, volatility clustering charts, return distribution histograms, and tail losses.
 3. Backtesting Diagnostic Reports: Summary tables displaying breach counts, fail ratios, $p$-values, and Basel Green/Yellow/Red zone classifications.
 4. Stress Loss Matrices: Scenario breakdown showing projected drawdown and capital at risk under market shocks.
 
 Methodology Notes
+
 1. Empirical Quantiles: Historical simulation calculates VaR directly from historical percentiles without assuming standard normality.
 2. Time Aggregation: 10-day VaR approximation via the $\sqrt{10}$ rule assumes identically and independently distributed (i.i.d.) returns; empirical volatility clustering can cause deviations from this assumption.
 3. Volatility Rescaling: Returns are normalized by dynamic standard deviations:
@@ -78,4 +86,5 @@ Methodology Notes
 6. Out-of-Sample Discipline: Back-testing utilizes strict rolling estimation windows to prevent look-ahead bias.
 
 Disclaimer
+
 This software is intended strictly for academic, research, and educational purposes. It does not constitute investment advice, financial planning, or regulatory risk assurance. Past market behavior and modeled estimates do not guarantee future performance.
