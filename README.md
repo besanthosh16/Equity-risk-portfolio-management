@@ -1,4 +1,5 @@
 Equity risk portfolio management
+
 Overview
 A Python-based quantitative risk platform designed to model, scale, backtest, and stress-test market risk metrics for equity portfolios. The platform calculates Value at Risk (VaR) and Expected Shortfall (ES) across multiple volatility-adjustment frameworks, evaluates regulatory compliance via statistical backtesting, and presents analytics through an interactive dashboard.
 
@@ -30,7 +31,7 @@ Visualization & UI: plotly, matplotlib, streamlit
 Testing: pytest
 
 Project Structure
-equity-risk-portfolio-management/
+  equity-risk-portfolio-management/
 ├── data/                      # Cached raw & processed price data
 ├── src/
 │   ├── data_pipeline.py       # Data fetching, date alignment & return math
