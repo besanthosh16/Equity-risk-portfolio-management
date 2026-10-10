@@ -14,45 +14,45 @@ Project Objective
 
 Project Phases
 
-Phase 1: Data Collection — Ingestion of multi-asset historical adjusted prices via financial APIs (yfinance).
-Phase 2: Data Cleaning — Date alignment, handling splits/dividends, missing values, and generating stationary log-return matrices.
-Phase 3: Portfolio Construction — Weight allocation (equal-weighted, market-cap, custom), daily portfolio returns, and tracking daily P&L.
-Phase 4: Historical Simulation VaR — Rolling window empirical quantile calculation (250, 500, 750 days) across 95%, 99%, and 99.5% confidence levels.
-Phase 5: EWMA Volatility Scaling — Exponentially Weighted Moving Average ($\lambda = 0.94$) filtering and return rescaling.
-Phase 6: GARCH Volatility Scaling — Fitting GARCH(1,1) autoregressive conditional heteroskedasticity models for forward volatility scaling.
-Phase 7: GJR-GARCH Volatility Scaling — Modeling leverage effects and asymmetric downside shocks.
-Phase 8: VaR Backtesting — Rolling out-of-sample exception detection, Kupiec POF test, Christoffersen Independence & Conditional Coverage tests, and Basel traffic lighting.
-Phase 9: Model Comparison — Side-by-side metric benchmarking across average VaR, exception rates, ES, and stability.
+Phase 1: Data Collection — Ingestion of multi-asset historical adjusted prices via financial APIs (yfinance). 
+Phase 2: Data Cleaning — Date alignment, handling splits/dividends, missing values, and generating stationary log-return matrices. 
+Phase 3: Portfolio Construction — Weight allocation (equal-weighted, market-cap, custom), daily portfolio returns, and tracking daily P&L. 
+Phase 4: Historical Simulation VaR — Rolling window empirical quantile calculation (250, 500, 750 days) across 95%, 99%, and 99.5% confidence levels. 
+Phase 5: EWMA Volatility Scaling — Exponentially Weighted Moving Average ($\lambda = 0.94$) filtering and return rescaling. 
+Phase 6: GARCH Volatility Scaling — Fitting GARCH(1,1) autoregressive conditional heteroskedasticity models for forward volatility scaling. 
+Phase 7: GJR-GARCH Volatility Scaling — Modeling leverage effects and asymmetric downside shocks. 
+Phase 8: VaR Backtesting — Rolling out-of-sample exception detection, Kupiec POF test, Christoffersen Independence & Conditional Coverage tests, and Basel traffic lighting. 
+Phase 9: Model Comparison — Side-by-side metric benchmarking across average VaR, exception rates, ES, and stability. 
 Phase 10: Stress Testing — Historical scenario playback (e.g., 2008 GFC, COVID-19 crash) and parametric factor shocks.
 
 Technologies Used
-
-Language: Python 3.10
-Data & Numerical Computing: pandas, numpy, scipy
-Time Series & Econometrics: arch (GARCH / GJR-GARCH), statsmodels
-Market Data: yfinance
-Visualization & UI: plotly, matplotlib, streamlit
+ 
+Language: Python 3.10 
+Data & Numerical Computing: pandas, numpy, scipy 
+Time Series & Econometrics: arch (GARCH / GJR-GARCH), statsmodels 
+Market Data: yfinance 
+Visualization & UI: plotly, matplotlib, streamlit 
 Testing: pytest
 
 Project Structure
  
   equity-risk-portfolio-management/
-├── data/                      # Cached raw & processed price data
-├── src/
-│   ├── data_pipeline.py       # Data fetching, date alignment & return math
-│   ├── portfolio.py           # Portfolio construction & aggregate P&L
-│   ├── var_historical.py      # Historical Simulation VaR & Expected Shortfall[cite: 1]
-│   ├── volatility.py          # EWMA, GARCH(1,1), GJR-GARCH implementations[cite: 1]
-│   ├── backtesting.py         # Kupiec, Christoffersen, & Basel tests[cite: 1]
-│   ├── stress_testing.py      # Historical & hypothetical stress scenarios[cite: 1]
-│   └── charts.py              # Visualizations & distribution plots[cite: 1]
-├── dashboard/
-│   └── app.py                 # Multi-page Streamlit application[cite: 1, 11]
-├── tests/
-│   └── test_*.py              # Unit tests for risk metrics & validation assertions[cite: 1]
-├── notebooks/                 # Exploratory data analysis & prototyping[cite: 1]
-├── requirements.txt           # Project dependencies
-└── README.md
+      data/                      # Cached raw & processed price data
+      src/
+        data_pipeline.py       # Data fetching, date alignment & return math
+        portfolio.py           # Portfolio construction & aggregate P&L
+        var_historical.py      # Historical Simulation VaR & Expected Shortfall[cite: 1]
+        volatility.py          # EWMA, GARCH(1,1), GJR-GARCH implementations[cite: 1]
+        backtesting.py         # Kupiec, Christoffersen, & Basel tests[cite: 1]
+        stress_testing.py      # Historical & hypothetical stress scenarios[cite: 1]
+        charts.py              # Visualizations & distribution plots[cite: 1]
+     dashboard/
+        app.py                 # Multi-page Streamlit application[cite: 1, 11]
+     tests/
+        test_*.py              # Unit tests for risk metrics & validation assertions[cite: 1]
+     notebooks/                 # Exploratory data analysis & prototyping[cite: 1]
+     requirements.txt           # Project dependencies
+     README.md
 
 Setup
 
@@ -82,8 +82,8 @@ Methodology Notes
 3. Volatility Rescaling: Returns are normalized by dynamic standard deviations:
       $$r_{t,\text{scaled}} = r_t \cdot \frac{\sigma_{\text{target}}}{\sigma_t}$$
       This prevents past calm regimes from underestimating risk and volatile spikes from over-inflating estimates.
-5. Asymmetric Risk: GJR-GARCH incorporates a leverage term ($\gamma$) to account for negative market returns inducing higher volatility spikes than positive returns of identical magnitude.
-6. Out-of-Sample Discipline: Back-testing utilizes strict rolling estimation windows to prevent look-ahead bias.
+4. Asymmetric Risk: GJR-GARCH incorporates a leverage term ($\gamma$) to account for negative market returns inducing higher volatility spikes than positive returns of identical magnitude.
+5. Out-of-Sample Discipline: Back-testing utilizes strict rolling estimation windows to prevent look-ahead bias.
 
 Disclaimer
 
